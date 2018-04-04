@@ -1,0 +1,86 @@
+p {
+	text-align: center;
+	white-space: normal !important;
+}
+
+.collapsibleSteps p {
+	font-size: 14px;
+	text-align: left !important;
+	white-space: normal !important;
+}
+
+.ui-collapsible-heading .ui-btn
+{
+	white-space: normal !important;
+}
+
+.collapsibleSteps h6 .ui-btn-text {
+	text-align: left !important;
+	font-size: 10px !important;
+	white-space: normal !important;
+	word-break: break-all;
+}
+
+.ui-header .ui-title {
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+#SolverPage #pageMarkup div.hidden {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+#practiceSolutionSteps {
+	display: block;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto !important;
+}
+
+#solutionSteps {
+	display: block;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto !important;
+}
+
+#practiceSolutionSteps li{
+	font-size: 12px;
+	white-space: normal !important;
+}
+
+#solutionSteps li{
+	font-size: 12px;
+	white-space: normal !important;
+}
+
+
+.panel-close-btn {
+	display: block;
+	margin-top: 20px;
+}
+
+.panel-link {
+	font-size: 12px;
+}
+
+.ui-icon-calculator:after {
+    background-image: url("images/icons-png/calculator.png") !important;
+    background-size: 18px 18px !important;
+}
+
+.ui-icon-pencil:after {
+    background-image: url("images/icons-png/pencil.png") !important;
+    background-size: 18px 18px !important;
+}
+
+.ui-mobile .ui-page .ui-content .ui-collapsible .ui-collapsible-heading .ui-btn-text {
+    white-space: normal !important;
+}​
+
+.ui-collapsible-heading-toggle {
+    white-space: normal !important;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=yes">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+		<link rel="stylesheet" href="jQuery/jquery.mobile.scrollview.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+		<script src="jQuery/jquery-1.11.3.min.js"></script>
+		<script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+		<script src="jQuery/jquery.mobile.scrollview.js"></script>
+		<script src="js/Token.js"></script>
+		<script src="js/Tokenizer.js"></script>
+		<script src="js/Stack.js"></script>
+		<script src="js/Step.js"></script>
+		<script src="js/Operand.js"></script>
+		<script src="js/SolverLibrary.js"></script>
+		<script src="js/control.js"></script>
+		<script src="js/index.js"></script>		
+        <title>BitTutor</title>
+    </head>
+    <body>
+		<div data-role="page" id="HomeScreen">
+			<div data-role="header" data-theme="a">
+				<h1>Home</h1>
+			</div>
+		
+			<p>Welcome to BitTutor!</p>
+			<p>Choose an operation mode below:</p>
+			
+			<a href="#PracticePage" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-pencil practice-button">Practice Mode</a>
+			<a href="#SolverPage" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-calculator solver-button">Solver Mode</a>
+		</div>
+		
+		<div data-role="page" id="PracticePage">
+			<div data-role="header" data-theme="a">
+				<a href="#HomeScreen" class="ui-button back-button" data-icon="carat-l">Back</a>
+				<h1>Practice</h1>
+				<a href="#practiceTopicPanel" class="ui-btn ui-btn-icon-right ui-icon-gear topic-button">Topic</a>
+			</div>
+			
+			<p id="problem"></p>
+			<button class="ui-button skip-button" data-iconpos="right" data-icon="action">Skip Problem</button>
+			<input data-clear-btn="true" id="answerInput" value="" type="text">
+			<button class="ui-button submit-button" data-iconpos="right" data-icon="action">Submit</button>
+			
+			<div id ="practiceStepsSection">
+				<p>Solution</p>
+				<button class="ui-button reveal-button" data-iconpos="right" data-icon="action">Reveal Step</button>
+				<input type="text" disabled="disabled" value="Steps Revealed: " id="stepsRevealed"></input>
+				<ul data-role="listview" data-inset="true" data-scroll="true" id ="practiceSolutionSteps">
+				</ul>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-display="overlay" id="practiceTopicPanel">
+				<ul data-role="listview" data-filter="true" data-scroll="true">
+					<li data-role="list-divider">Conversion</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Decimal-to-Binary Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Decimal-to-Hexadecimal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Decimal-to-Octal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Decimal-to-BCD Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary-to-Decimal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary-to-Hexadecimal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary-to-Octal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary-to-BCD Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal-to-Decimal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal-to-Binary Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal-to-Octal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal-to-BCD Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal-to-Decimal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal-to-Binary Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal-to-Hexadecimal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal-to-BCD Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD-to-Decimal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD-to-Binary Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD-to-Hexadecimal Conversion</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD-to-Octal Conversion</a></li>
+					<li data-role="list-divider">Addition</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary Addition</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal Addition</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal Addition</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD Addition</a></li>
+					<li data-role="list-divider">Subtraction</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary Subtraction</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal Subtraction</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal Subtraction</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD Subtraction</a></li>
+					<li data-role="list-divider">Multiplication</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary Multiplication</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal Multiplication</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal Multiplication</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD Multiplication</a></li>
+					<li data-role="list-divider">Division</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary Division</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal Division</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal Division</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD Division</a></li>
+					<li data-role="list-divider">Complement</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary Complement</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal Complement</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal Complement</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">BCD Complement</a></li>
+					<li data-role="list-divider">And</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary And</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal And</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal And</a></li>
+					<li data-role="list-divider">Or</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary Or</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal Or</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal Or</a></li>
+					<li data-role="list-divider">Exclusive Or</li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Binary Exclusive Or</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Hexadecimal Exclusive Or</a></li>
+					<li><a href="#PracticePage" data-rel="close" class="panel-link">Octal Exclusive Or</a></li>
+				</ul>
+				
+				<a href="#PracticePage" data-rel="close" class="ui-btn panel-close-btn">Close Panel</a>
+			</div>
+		</div>
+		
+		<div data-role="page" id="SolverPage">
+			<div data-role="header" data-theme="a">
+				<a href="#HomeScreen" class="ui-button back-button" data-icon="carat-l">Back</a>
+				<h1>Solver</h1>
+				<a href="#solverTopicPanel" class="ui-btn ui-btn-icon-right ui-icon-gear topic-button">Topic</a>
+			</div>
+			
+			<div id="arithmeticForm">
+				<p>Operand Type</p>
+				
+				<select id="operandType">
+					<option value="Binary">Binary</option>
+					<option value="Hexadecimal">Hexadecimal</option>
+					<option value="Octal">Octal</option>
+					<option value="Binary Coded Decimal">Binary Coded Decimal</option>
+				</select>
+			
+				<p>Equation</p>
+			
+				<input data-clear-btn="true" id="equationInput" value="" type="text">
+			
+				<button class="ui-button submit-button" data-iconpos="right" data-icon="action">Submit</button>
+			</div>
+			
+			<div id="conversionForm">
+				<p>Convert</p>
+				
+				<input data-clear-btn="true" id="numberInput" value="" type="text">
+				
+				<p>From</p>
+				
+				<select id="fromType">
+					<option value="Decimal">Decimal</option>
+					<option value="Binary">Binary</option>
+					<option value="Hexadecimal">Hexadecimal</option>
+					<option value="Octal">Octal</option>
+					<option value="Binary Coded Decimal">Binary Coded Decimal</option>
+				</select>
+				
+				<p>To</p>
+				
+				<select id="toType">
+					<option value="Decimal">Decimal</option>
+					<option value="Binary">Binary</option>
+					<option value="Hexadecimal">Hexadecimal</option>
+					<option value="Octal">Octal</option>
+					<option value="Binary Coded Decimal">Binary Coded Decimal</option>
+				</select>
+				
+				<button class="ui-button submit-button" data-iconpos="right" data-icon="action">Submit</button>
+			</div>
+			
+			<div id ="solverStepsSection">
+				<p>Solution</p>
+				<ul data-role="listview" data-inset="true" data-scroll="true" id ="solutionSteps">
+				</ul>
+			</div>
+			
+			<div data-role="panel" data-position="right" data-display="overlay" id="solverTopicPanel">
+				<ul data-role="listview">
+					<li><a href="#SolverPage" data-rel="close" class="arithmetic-button">Arithmetic</a></li>
+					<li><a href="#SolverPage" data-rel="close" class="conversion-button">Number Base Conversion</a></li>
+				</ul>
+				
+				<a href="#SolverPage" data-rel="close" class="ui-btn panel-close-btn">Close Panel</a>
+			</div>	
+		</div>
+		
+    </body>
+</html>
